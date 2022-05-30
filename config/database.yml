@@ -22,7 +22,15 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  <<: *default
+  #<<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: snerx
+  password: 
+  timeout: 5000
+  host: "localhost"
+  socket: /tmp/.s.PGSQL.5432
   database: dog_encyclopedia_backend_development
 
   # The specified database role being used to connect to postgres.
